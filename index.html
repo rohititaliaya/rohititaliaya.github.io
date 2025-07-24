@@ -4,50 +4,135 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rohit Italiya | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         background: #ffffff;
         color: #1e293b;
       }
-      [x-cloak] { display: none !important; }
+      [x-cloak] {
+        display: none !important;
+      }
     </style>
   </head>
-  <body class=" text-gray-900">
+  <body class="text-gray-900">
     <!-- Sticky Minimal Top Navigation -->
-    <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm" x-data="{ open: false }">
-      <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-        <h1 class="text-xl font-extrabold tracking-tight text-black">Rohit Italiya</h1>
+    <header
+      class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm"
+      x-data="{ open: false }"
+    >
+      <div
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3"
+      >
+        <h1 class="text-xl font-extrabold tracking-tight text-black">
+          Rohit Italiya
+        </h1>
         <!-- Desktop Nav -->
         <nav class="hidden md:flex space-x-4 text-sm font-semibold">
-          <a href="#bio" class="text-gray-700 hover:text-black transition">About</a>
-          <a href="#experience" class="text-gray-700 hover:text-black transition">Experience</a>
-          <a href="#certifications" class="text-gray-700 hover:text-black transition">Certifications</a>
-          <a href="#projects" class="text-gray-700 hover:text-black transition">Projects</a>
-          <a href="#skills" class="text-gray-700 hover:text-black transition">Skills</a>
-          <a href="#education" class="text-gray-700 hover:text-black transition">Education</a>
-          <a href="#contact" class="text-gray-700 hover:text-black transition">Contact</a>
+          <a href="#bio" class="text-gray-700 hover:text-black transition"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-black transition"
+            >Experience</a
+          >
+          <a
+            href="#certifications"
+            class="text-gray-700 hover:text-black transition"
+            >Certifications</a
+          >
+          <a href="#projects" class="text-gray-700 hover:text-black transition"
+            >Projects</a
+          >
+          <a href="#skills" class="text-gray-700 hover:text-black transition"
+            >Skills</a
+          >
+          <a href="#education" class="text-gray-700 hover:text-black transition"
+            >Education</a
+          >
+          <a href="#contact" class="text-gray-700 hover:text-black transition"
+            >Contact</a
+          >
         </nav>
         <!-- Hamburger Button -->
-        <button @click="open = !open" class="md:hidden flex items-center px-2 py-1 text-gray-700 hover:text-black focus:outline-none" aria-label="Toggle navigation">
-          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <button
+          @click="open = !open"
+          class="md:hidden flex items-center px-2 py-1 text-gray-700 hover:text-black focus:outline-none"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            class="h-7 w-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
           </svg>
         </button>
       </div>
       <!-- Mobile Nav -->
-      <nav class="md:hidden" x-show="open" x-cloak @click.away="open = false" x-transition>
-        <div class="px-6 pb-4 pt-2 flex flex-col space-y-2 bg-white border-b border-gray-200 shadow">
-          <a href="#bio" class="text-gray-700 hover:text-black transition py-1">About</a>
-          <a href="#experience" class="text-gray-700 hover:text-black transition py-1">Experience</a>
-          <a href="#certifications" class="text-gray-700 hover:text-black transition py-1">Certifications</a>
-          <a href="#projects" class="text-gray-700 hover:text-black transition py-1">Projects</a>
-          <a href="#skills" class="text-gray-700 hover:text-black transition py-1">Skills</a>
-          <a href="#education" class="text-gray-700 hover:text-black transition py-1">Education</a>
-          <a href="#contact" class="text-gray-700 hover:text-black transition py-1">Contact</a>
+      <nav
+        class="md:hidden"
+        x-show="open"
+        x-cloak
+        @click.away="open = false"
+        x-transition
+      >
+        <div
+          class="px-6 pb-4 pt-2 flex flex-col space-y-2 bg-white border-b border-gray-200 shadow"
+        >
+          <a href="#bio" class="text-gray-700 hover:text-black transition py-1"
+            >About</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-700 hover:text-black transition py-1"
+            >Experience</a
+          >
+          <a
+            href="#certifications"
+            class="text-gray-700 hover:text-black transition py-1"
+            >Certifications</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-black transition py-1"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-700 hover:text-black transition py-1"
+            >Skills</a
+          >
+          <a
+            href="#education"
+            class="text-gray-700 hover:text-black transition py-1"
+            >Education</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-black transition py-1"
+            >Contact</a
+          >
         </div>
       </nav>
     </header>
@@ -55,199 +140,902 @@
     <!-- Hero Section: Avatar, Name, Tagline, CTA -->
     <section class="bg-gradient-to-b from-indigo-50 to-white py-24 text-center">
       <div class="max-w-2xl mx-auto flex flex-col items-center">
-        <img src="/images/rohititaliaya.jpg" class="w-36 h-36 rounded-full border-4 border-white shadow-lg object-cover mb-6" alt="Rohit Italiya" />
-        <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-3">Rohit Italiya</h2>
-        <p class="text-lg text-gray-600 mb-6 max-w-xl">Sr. Laravel Developer | FullStack Engineer | Product Builder<br>Helping companies scale with Laravel, Vue, and AWS.</p>
-        <a href="#projects" class="px-8 py-3 bg-indigo-600 text-white text-base font-semibold rounded-full shadow hover:bg-indigo-700 transition mb-2">See My Work</a>
-             
-          </a>
-          <a href="https://linkedin.com/in/rohit-italiya" class="text-gray-500 hover:text-indigo-600" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.844-1.563 3.042 0 3.604 2.002 3.604 4.604v5.592z"/></svg></a>
-        </div>
+        <img
+          src="/images/rohititaliaya.jpg"
+          class="w-36 h-36 rounded-full border-4 border-white shadow-lg object-cover mb-6"
+          alt="Rohit Italiya"
+        />
+        <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-3">
+          Rohit Italiya
+        </h2>
+        <p class="text-lg text-gray-600 mb-6 max-w-xl">
+          Sr. Laravel Developer | FullStack Engineer | Product Builder<br />
+        </p>
+        <p class="text-sm text-gray-500 mb-6">Timezone: Asia/Calcutta</p>
+        <a
+          href="#projects"
+          class="px-8 py-3 bg-indigo-600 text-white text-base font-semibold rounded-full shadow hover:bg-indigo-700 transition mb-2"
+          >See My Work</a
+        >
       </div>
     </section>
 
     <!-- Main Sections -->
     <main class="max-w-4xl mx-auto px-6 py-12 space-y-24">
       <section id="bio" class="flex justify-center py-12 rounded-2xl">
-        <div class="bg-white rounded-2xl shadow-lg p-8 max-w-2xl w-full border border-gray-100 flex flex-col items-center">
-          <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full shadow mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm0 8v-2a4 4 0 00-4-4H5a2 2 0 00-2 2v2a2 2 0 002 2h14a2 2 0 002-2v-2a2 2 0 00-2-2h-1a4 4 0 00-4 4v2z"/></svg>
+        <div
+          class="bg-white rounded-2xl shadow-lg p-8 max-w-2xl w-full border border-gray-100 flex flex-col items-center"
+        >
+          <div
+            class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full shadow mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3zm0 8v-2a4 4 0 00-4-4H5a2 2 0 00-2 2v2a2 2 0 002 2h14a2 2 0 002-2v-2a2 2 0 00-2-2h-1a4 4 0 00-4 4v2z"
+              />
+            </svg>
           </div>
           <h3 class="text-2xl font-semibold mb-2 text-center">About Me</h3>
           <div class="flex justify-center mb-4">
             <span class="inline-block w-16 h-1 bg-indigo-200 rounded"></span>
           </div>
-          <p class="text-gray-700 text-lg text-center mb-6">Sr. Laravel Developer with 5+ years of experience in FullStack development. I enjoy building robust systems, refining user experiences, and contributing to technical excellence across frontend and backend.</p>
+          <p class="text-gray-700 text-lg text-center mb-6">
+            Sr. Laravel Developer with 5+ years of experience in FullStack
+            development. I enjoy building robust systems, refining user
+            experiences, and contributing to technical excellence across
+            frontend and backend.
+          </p>
           <div class="flex flex-wrap justify-center gap-2 mt-2">
-            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold">5+ Years Experience</span>
-            <span class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Laravel & VueJS</span>
-            <span class="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">AWS & Docker</span>
+            <span
+              class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold"
+              >5+ Years Experience</span
+            >
+            <span
+              class="bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-semibold"
+              >Laravel & VueJS</span
+            >
+            <span
+              class="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold"
+              >AWS & Docker</span
+            >
           </div>
         </div>
       </section>
 
       <section id="skills" class="flex justify-center py-12 rounded-2xl">
         <div class="max-w-3xl w-full">
-          <h3 class="text-2xl font-semibold mb-2 text-center">Technical Skills</h3>
+          <h3 class="text-2xl font-semibold mb-2 text-center">
+            Technical Skills
+          </h3>
           <div class="flex justify-center mb-6">
             <span class="inline-block w-16 h-1 bg-indigo-200 rounded"></span>
           </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 text-sm text-gray-700">
+          <div
+            class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 text-sm text-gray-700"
+          >
             <div class="flex flex-col items-center space-y-1 group transition">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-10 h-10 group-hover:scale-110 transition-transform" alt="PHP" />
-              <span class="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-indigo-100 transition">PHP</span>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                class="w-10 h-10 group-hover:scale-110 transition-transform"
+                alt="PHP"
+              />
+              <span
+                class="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-indigo-100 transition"
+                >PHP</span
+              >
             </div>
             <div class="flex flex-col items-center space-y-1 group transition">
-              <img src="https://laravel.com/img/favicon/apple-touch-icon.png" class="w-10 h-10 group-hover:scale-110 transition-transform" alt="Laravel" />
-              <span class="bg-red-50 text-red-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-red-100 transition">Laravel</span>
+              <img
+                src="https://laravel.com/img/favicon/apple-touch-icon.png"
+                class="w-10 h-10 group-hover:scale-110 transition-transform"
+                alt="Laravel"
+              />
+              <span
+                class="bg-red-50 text-red-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-red-100 transition"
+                >Laravel</span
+              >
             </div>
             <div class="flex flex-col items-center space-y-1 group transition">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="w-10 h-10 group-hover:scale-110 transition-transform" alt="VueJS" />
-              <span class="bg-green-50 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-green-100 transition">VueJS</span>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                class="w-10 h-10 group-hover:scale-110 transition-transform"
+                alt="VueJS"
+              />
+              <span
+                class="bg-green-50 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-green-100 transition"
+                >VueJS</span
+              >
             </div>
             <div class="flex flex-col items-center space-y-1 group transition">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-10 h-10 group-hover:scale-110 transition-transform" alt="MySQL" />
-              <span class="bg-yellow-50 text-yellow-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-yellow-100 transition">MySQL</span>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                class="w-10 h-10 group-hover:scale-110 transition-transform"
+                alt="MySQL"
+              />
+              <span
+                class="bg-yellow-50 text-yellow-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-yellow-100 transition"
+                >MySQL</span
+              >
             </div>
             <div class="flex flex-col items-center space-y-1 group transition">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-10 h-10 group-hover:scale-110 transition-transform" alt="Docker" />
-              <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-blue-100 transition">Docker</span>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                class="w-10 h-10 group-hover:scale-110 transition-transform"
+                alt="Docker"
+              />
+              <span
+                class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-blue-100 transition"
+                >Docker</span
+              >
             </div>
             <div class="flex flex-col items-center space-y-1 group transition">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" class="w-10 h-10 group-hover:scale-110 transition-transform" alt="GitLab" />
-              <span class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-orange-100 transition">GitLab</span>
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
+                class="w-10 h-10 group-hover:scale-110 transition-transform"
+                alt="GitLab"
+              />
+              <span
+                class="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-orange-100 transition"
+                >GitLab</span
+              >
             </div>
             <div class="flex flex-col items-center space-y-1 group transition">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/250px-Amazon_Web_Services_Logo.svg.png" class="w-10 h-10 group-hover:scale-110 transition-transform" alt="AWS" />
-              <span class="bg-gray-50 text-gray-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-gray-100 transition">AWS</span>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/250px-Amazon_Web_Services_Logo.svg.png"
+                class="w-10 h-10 group-hover:scale-110 transition-transform"
+                alt="AWS"
+              />
+              <span
+                class="bg-gray-50 text-gray-700 px-2 py-0.5 rounded-full text-xs font-semibold group-hover:bg-gray-100 transition"
+                >AWS</span
+              >
             </div>
           </div>
         </div>
       </section>
 
-       <!-- New Projects Section -->
-       <section id="projects" class="py-12">
+      <!-- New Projects Section -->
+      <section id="projects" class="py-12">
         <h3 class="text-2xl font-semibold mb-6 text-center">Projects</h3>
         <div class="flex justify-center mb-4">
           <span class="inline-block w-16 h-1 bg-indigo-200 rounded"></span>
         </div>
-        <div class="grid grid-cols-1 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Project 1: Xinva -->
-          <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-            <div class="md:w-full">
-              <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-white">Xinva</h4>
-              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">Role: Laravel Developer</p>
-              <p class="text-gray-700 text-sm mb-4 dark:text-gray-300">AI image Generator. In the development of Xinva.AI, my role was pivotal in integrating the Replicate and Mid Journey APIs. This integration forms the backbone of the AI image generation process, ensuring a robust and efficient system that delivers exceptional results. By seamlessly connecting these APIs, I contributed to the creation of a dynamic platform that empowers users to explore the full potential of AI-generated imagery.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
-                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML/CSS</span>
-                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">VueJS</span>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col space-y-4"
+            x-data="{ showDetails: false }"
+          >
+            <!-- Summary view -->
+            <img
+              src="https://xinva.ai/wp-content/uploads/2023/04/Main-Brand-Logo-For-Xinva.png"
+              alt="Xinva Project Image"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <div class="w-full flex flex-col justify-between">
+              <div>
+              <h4
+                class="text-xl font-semibold text-gray-800 mb-2 dark:text-white"
+              >
+                Xinva
+              </h4>
+              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">
+                Role: Laravel Developer
+              </p>
               </div>
-              <a href="https://xinva.ai/" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300">
-                View Project
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <button
+                @click="showDetails = true"
+                class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                More Details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Popup Modal -->
+            <div
+              x-show="showDetails"
+              x-cloak
+              class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50"
+              @click.away="showDetails = false"
+            >
+              <div
+                class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative"
+                @click.stop
+              >
+                <button
+                  @click="showDetails = false"
+                  class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+                <h4 class="text-2xl font-bold mb-4">Xinva</h4>
+                <img
+                  src="https://xinva.ai/wp-content/uploads/2023/04/Main-Brand-Logo-For-Xinva.png"
+                  alt="Xinva Project Image"
+                  class="w-full h-auto object-cover rounded-lg mb-4"
+                />
+                <p class="text-gray-600 text-sm mb-2">
+                  Role: Laravel Developer
+                </p>
+                <ul class="list-disc list-inside text-gray-700 text-sm mb-4">
+                  <li>AI image Generator.</li>
+                  <li>In the development of Xinva.AI, my role was pivotal in integrating the Replicate and Mid Journey APIs.</li>
+                  <li>This integration forms the backbone of the AI image generation process, ensuring a robust and efficient system that delivers exceptional results.</li>
+                  <li>By seamlessly connecting these APIs, I contributed to the creation of a dynamic platform that empowers users to explore the full potential of AI-generated imagery.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
+                  <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML/CSS</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">VueJS</span>
+              </div>
+              <a
+                href="https://xinva.ai/"
+                target="_blank"
+                  class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                  Visit Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 2: Crikk -->
-          <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-            <div class="md:w-full">
-              <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-white">Crikk</h4>
-              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">Role: Laravel Developer</p>
-              <p class="text-gray-700 text-sm mb-4 dark:text-gray-300">Crikk is a modern, streamlined platform designed to facilitate seamless online interactions—whether it's collaboration, communication, or content sharing. As a Laravel Developer, I built and maintained the core backend architecture, developing rich API endpoints and efficient data models with Laravel and MySQL. I played a key role in implementing Tailwind CSS for rapid, responsive UI development, ensuring clean layouts across desktop and mobile views. My focus on clean code and scalable architecture improved system performance and maintainability. The end result is a cohesive and intuitive platform that supports fast workflows, smooth user experiences, and modular expansion as Crikk evolves.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
-                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">Tailwind CSS</span>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col space-y-4"
+            x-data="{ showDetails: false }"
+          >
+            <!-- Summary view -->
+            <img
+              src="https://crikk.com/sale/images/logo.png"
+              alt="Crikk Project Image"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <div class="w-full flex flex-col justify-between">
+              <div>
+              <h4
+                class="text-xl font-semibold text-gray-800 mb-2 dark:text-white"
+              >
+                Crikk
+              </h4>
+              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">
+                Role: Laravel Developer
+              </p>
               </div>
-              <a href="https://crikk.com/" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300">
-                View Project
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <button
+                @click="showDetails = true"
+                class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                More Details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Popup Modal -->
+            <div
+              x-show="showDetails"
+              x-cloak
+              class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50"
+              @click.away="showDetails = false"
+            >
+              <div
+                class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative"
+                @click.stop
+              >
+                <button
+                  @click="showDetails = false"
+                  class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+                <h4 class="text-2xl font-bold mb-4">Crikk</h4>
+                <img
+                  src="https://crikk.com/sale/images/logo.png"
+                  alt="Crikk Project Image"
+                  class="w-full h-auto object-cover rounded-lg mb-4"
+                />
+                <p class="text-gray-600 text-sm mb-2">
+                  Role: Laravel Developer
+                </p>
+                <ul class="list-disc list-inside text-gray-700 text-sm mb-4">
+                  <li>Crikk is a modern, streamlined platform designed to facilitate seamless online interactions—whether it's collaboration, communication, or content sharing.</li>
+                  <li>As a Laravel Developer, I built and maintained the core backend architecture, developing rich API endpoints and efficient data models with Laravel and MySQL.</li>
+                  <li>I played a key role in implementing Tailwind CSS for rapid, responsive UI development, ensuring clean layouts across desktop and mobile views.</li>
+                  <li>My focus on clean code and scalable architecture improved system performance and maintainability.</li>
+                  <li>The end result is a cohesive and intuitive platform that supports fast workflows, smooth user experiences, and modular expansion as Crikk evolves.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
+                  <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">Tailwind CSS</span>
+              </div>
+              <a
+                href="https://crikk.com/"
+                target="_blank"
+                  class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                  Visit Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 3: Shanti Jewels -->
-          <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-            <div class="md:w-full">
-              <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-white">Shanti Jewels</h4>
-              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">Role: Laravel Developer</p>
-              <p class="text-gray-700 text-sm mb-4 dark:text-gray-300">Online E-commerce platform for Jewellers. As a Laravel Developer, I contributed to building and maintaining this e-commerce platform for the jewellery industry. I worked on both backend and frontend components using Laravel, MySQL, HTML, SCSS, and JavaScript. The platform offers a seamless shopping experience, with features like dynamic product listings, secure checkout, and user account management.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
-                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
-                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
-                <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">JavaScript</span>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col space-y-4"
+            x-data="{ showDetails: false }"
+          >
+            <!-- Summary view -->
+            <img
+              src="https://www.shantijewel.com/assets/image/logo.png"
+              alt="Shanti Jewels Project Image"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <div class="w-full flex flex-col justify-between">
+              <div>
+              <h4
+                class="text-xl font-semibold text-gray-800 mb-2 dark:text-white"
+              >
+                Shanti Jewels
+              </h4>
+              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">
+                Role: Laravel Developer
+              </p>
               </div>
-              <a href="https://www.shantijewel.com/" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300">
-                View Project
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <button
+                @click="showDetails = true"
+                class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                More Details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Popup Modal -->
+            <div
+              x-show="showDetails"
+              x-cloak
+              class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50"
+              @click.away="showDetails = false"
+            >
+              <div
+                class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative"
+                @click.stop
+              >
+                <button
+                  @click="showDetails = false"
+                  class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+                <h4 class="text-2xl font-bold mb-4">Shanti Jewels</h4>
+                <img
+                  src="https://www.shantijewel.com/assets/image/logo.png"
+                  alt="Shanti Jewels Project Image"
+                  class="w-full h-auto object-cover rounded-lg mb-4"
+                />
+                <p class="text-gray-600 text-sm mb-2">
+                  Role: Laravel Developer
+                </p>
+                <ul class="list-disc list-inside text-gray-700 text-sm mb-4">
+                  <li>Online E-commerce platform for Jewellers.</li>
+                  <li>As a Laravel Developer, I contributed to building and maintaining this e-commerce platform for the jewellery industry.</li>
+                  <li>I worked on both backend and frontend components using Laravel, MySQL, HTML, SCSS, and JavaScript.</li>
+                  <li>The platform offers a seamless shopping experience, with features like dynamic product listings, secure checkout, and user account management.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
+                  <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
+                  <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">JavaScript</span>
+              </div>
+              <a
+                href="https://www.shantijewel.com/"
+                target="_blank"
+                  class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                  Visit Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 4: Steer Education -->
-          <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-            <div class="md:w-full">
-              <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-white">Steer Education</h4>
-              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">Role: Laravel Developer</p>
-              <p class="text-gray-700 text-sm mb-4 dark:text-gray-300">Steer is an innovative educational‑technology platform specializing in whole‑school wellbeing and safeguarding through early‑warning analytics. Designed and implemented student-tracking modules using Laravel and JavaScript, ensuring reliable data collection, analysis, and reporting for school staff. Developed responsive front-end interfaces with HTML and SCSS, facilitating intuitive dashboards and action plan views tailored to teachers and counselors. Integrated MySQL-driven backend systems to support real‑time alerts and customizable wellbeing metrics, enhancing scalability and performance. Collaborated closely with the client’s stakeholder team to refine user workflows, improving usability and impact across primary and secondary education settings.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
-                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
-                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
-                <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">JavaScript</span>
-                <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-100">Angular</span>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col space-y-4"
+            x-data="{ showDetails: false }"
+          >
+            <!-- Summary view -->
+            <img
+              src="https://steer.education/wp-content/themes/AboveTheme/assets/images/svg/STEER_Logo.svg"
+              alt="Steer Education Project Image"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <div class="w-full flex flex-col justify-between">
+              <div>
+              <h4
+                class="text-xl font-semibold text-gray-800 mb-2 dark:text-white"
+              >
+                Steer Education
+              </h4>
+              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">
+                Role: Laravel Developer
+              </p>
               </div>
-              <a href="https://steer.global/" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300">
-                View Project
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <button
+                @click="showDetails = true"
+                class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                More Details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Popup Modal -->
+            <div
+              x-show="showDetails"
+              x-cloak
+              class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50"
+              @click.away="showDetails = false"
+            >
+              <div
+                class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative"
+                @click.stop
+              >
+                <button
+                  @click="showDetails = false"
+                  class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+                <h4 class="text-2xl font-bold mb-4">Steer Education</h4>
+                <img
+                  src="https://steer.education/wp-content/themes/AboveTheme/assets/images/svg/STEER_Logo.svg"
+                  alt="Steer Education Project Image"
+                  class="w-full h-auto object-cover rounded-lg mb-4"
+                />
+                <p class="text-gray-600 text-sm mb-2">
+                  Role: Laravel Developer
+                </p>
+                <ul class="list-disc list-inside text-gray-700 text-sm mb-4">
+                  <li>Steer is an innovative educational‑technology platform specializing in whole‑school wellbeing and safeguarding through early‑warning analytics.</li>
+                  <li>Designed and implemented student-tracking modules using Laravel and JavaScript, ensuring reliable data collection, analysis, and reporting for school staff.</li>
+                  <li>Developed responsive front-end interfaces with HTML and SCSS, facilitating intuitive dashboards and action plan views tailored to teachers and counselors.</li>
+                  <li>Integrated MySQL-driven backend systems to support real‑time alerts and customizable wellbeing metrics, enhancing scalability and performance.</li>
+                  <li>Collaborated closely with the client's stakeholder team to refine user workflows, improving usability and impact across primary and secondary education settings.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
+                  <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
+                  <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">JavaScript</span>
+                  <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-100">Angular</span>
+              </div>
+              <a
+                href="https://steer.global/"
+                target="_blank"
+                  class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                  Visit Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 5: Swaniel -->
-          <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-            <div class="md:w-full">
-              <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-white">Swaniel</h4>
-              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">Role: Laravel Developer</p>
-              <p class="text-gray-700 text-sm mb-4 dark:text-gray-300">Swaniel is a cutting-edge AI-powered platform designed to revolutionize the fashion-tech landscape. As a Laravel Developer, I contributed to both the backend and frontend, implementing robust features such as user authentication, product customization, and dynamic admin panels. Using VueJS, I built interactive UI components that enhanced user engagement and responsiveness. I optimized data storage and retrieval through efficient MySQL schema design and Laravel Eloquent models. Additionally, I ensured clean, maintainable styles with SCSS and integrated JavaScript-driven user interactions to deliver a polished, modern experience.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
-                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
-                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
-                <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">VueJS</span>
-                <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-100">JavaScript</span>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col space-y-4"
+            x-data="{ showDetails: false }"
+          >
+            <!-- Summary view -->
+            <img
+              src="https://swxn.ai/front/images/swan.png"
+              alt="Swaniel Project Image"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <div class="w-full flex flex-col justify-between">
+              <div>
+              <h4
+                class="text-xl font-semibold text-gray-800 mb-2 dark:text-white"
+              >
+                Swaniel
+              </h4>
+              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">
+                Role: Laravel Developer
+              </p>
               </div>
-              <a href="https://swxn.ai/" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300">
-                View Project
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <button
+                @click="showDetails = true"
+                class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                More Details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Popup Modal -->
+            <div
+              x-show="showDetails"
+              x-cloak
+              class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50"
+              @click.away="showDetails = false"
+            >
+              <div
+                class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative"
+                @click.stop
+              >
+                <button
+                  @click="showDetails = false"
+                  class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+                <h4 class="text-2xl font-bold mb-4">Swaniel</h4>
+                <img
+                  src="https://swxn.ai/front/images/swan.png"
+                  alt="Swaniel Project Image"
+                  class="w-full h-auto object-cover rounded-lg mb-4"
+                />
+                <p class="text-gray-600 text-sm mb-2">
+                  Role: Laravel Developer
+                </p>
+                <ul class="list-disc list-inside text-gray-700 text-sm mb-4">
+                  <li>Swaniel is a cutting-edge AI-powered platform designed to revolutionize the fashion-tech landscape.</li>
+                  <li>As a Laravel Developer, I contributed to both the backend and frontend, implementing robust features such as user authentication, product customization, and dynamic admin panels.</li>
+                  <li>Using VueJS, I built interactive UI components that enhanced user engagement and responsiveness.</li>
+                  <li>I optimized data storage and retrieval through efficient MySQL schema design and Laravel Eloquent models.</li>
+                  <li>Additionally, I ensured clean, maintainable styles with SCSS and integrated JavaScript-driven user interactions to deliver a polished, modern experience.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
+                  <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
+                  <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">VueJS</span>
+                  <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-100">JavaScript</span>
+              </div>
+              <a
+                href="https://swxn.ai/"
+                target="_blank"
+                  class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                  Visit Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 6: Swoopos -->
-          <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
-            <div class="md:w-full">
-              <h4 class="text-xl font-semibold text-gray-800 mb-2 dark:text-white">Swoopos</h4>
-              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">Role: Laravel Developer</p>
-              <p class="text-gray-700 text-sm mb-4 dark:text-gray-300">Swoopos is a comprehensive point-of-sale (POS) and business management platform designed to streamline retail and service operations. As a Laravel Developer, I built and maintained key backend systems, including secure user management, transactional logic, and inventory tracking. I crafted responsive frontend interfaces with HTML, SCSS, and JavaScript to ensure smooth navigation and real-time data updates—such as live sales dashboards and order processing flows. Utilizing optimized MySQL schema and Laravel Eloquent ORM, I enhanced data performance for high-volume transactions. The result was a feature-rich, user-friendly POS system tailored for seamless in-store and online business workflows.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
-                <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
-                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
-                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
-                <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">JavaScript</span>
+          <div
+            class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 dark:bg-gray-800 dark:border-gray-700 flex flex-col space-y-4"
+            x-data="{ showDetails: false }"
+          >
+            <!-- Summary view -->
+            <img
+              src="https://d1mrm11x9ewubd.cloudfront.net/public/images/logo.png"
+              alt="Swoopos Project Image"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <div class="w-full flex flex-col justify-between">
+              <div>
+              <h4
+                class="text-xl font-semibold text-gray-800 mb-2 dark:text-white"
+              >
+                Swoopos
+              </h4>
+              <p class="text-gray-600 text-sm mb-2 dark:text-gray-400">
+                Role: Laravel Developer
+              </p>
               </div>
-              <a href="https://swoopos.com/" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300">
-                View Project
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <button
+                @click="showDetails = true"
+                class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                More Details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Popup Modal -->
+            <div
+              x-show="showDetails"
+              x-cloak
+              class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50"
+              @click.away="showDetails = false"
+            >
+              <div
+                class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative"
+                @click.stop
+              >
+                <button
+                  @click="showDetails = false"
+                  class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+                <h4 class="text-2xl font-bold mb-4">Swoopos</h4>
+                <img
+                  src="https://d1mrm11x9ewubd.cloudfront.net/public/images/logo.png"
+                  alt="Swoopos Project Image"
+                  class="w-full h-auto object-cover rounded-lg mb-4"
+                />
+                <p class="text-gray-600 text-sm mb-2">
+                  Role: Laravel Developer
+                </p>
+                <ul class="list-disc list-inside text-gray-700 text-sm mb-4">
+                  <li>Swoopos is a comprehensive point-of-sale (POS) and business management platform designed to streamline retail and service operations.</li>
+                  <li>As a Laravel Developer, I built and maintained key backend systems, including secure user management, transactional logic, and inventory tracking.</li>
+                  <li>I crafted responsive frontend interfaces with HTML, SCSS, and JavaScript to ensure smooth navigation and real-time data updates—such as live sales dashboards and order processing flows.</li>
+                  <li>Utilizing optimized MySQL schema and Laravel Eloquent ORM, I enhanced data performance for high-volume transactions.</li>
+                  <li>The result was a feature-rich, user-friendly POS system tailored for seamless in-store and online business workflows.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-100">Laravel</span>
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">MySQL</span>
+                  <span class="bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-100">HTML</span>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-100">SCSS</span>
+                  <span class="bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded-full dark:bg-red-900 dark:text-red-100">JavaScript</span>
+              </div>
+              <a
+                href="https://swoopos.com/"
+                target="_blank"
+                  class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium text-sm dark:text-indigo-400 dark:hover:text-indigo-300 mt-4"
+              >
+                  Visit Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
               </a>
+              </div>
             </div>
           </div>
         </div>
@@ -261,58 +1049,141 @@
         <div class="relative border-l-2 border-indigo-100 ml-4">
           <!-- Whyphy Infotech -->
           <div class="mb-10 ml-8">
-            <div class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 7V6a6 6 0 1112 0v1M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z"/></svg>
+            <div
+              class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow"
+            >
+              <svg
+                class="w-5 h-5 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 7V6a6 6 0 1112 0v1M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z"
+                />
+              </svg>
             </div>
             <div class="bg-white rounded-xl shadow p-5 border border-gray-100">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
+              >
                 <span class="font-bold text-indigo-700">Whyphy Infotech</span>
-                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0">Jan 2025 - Present</span>
+                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0"
+                  >Jan 2025 - Present</span
+                >
               </div>
-              <div class="text-gray-800 font-medium">Sr. Laravel Developer | SDE II</div>
+              <div class="text-gray-800 font-medium">
+                Sr. Laravel Developer | SDE II
+              </div>
             </div>
           </div>
           <!-- Dhiera Solutions -->
           <div class="mb-10 ml-8">
-            <div class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 7V6a6 6 0 1112 0v1M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z"/></svg>
+            <div
+              class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow"
+            >
+              <svg
+                class="w-5 h-5 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 7V6a6 6 0 1112 0v1M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z"
+                />
+              </svg>
             </div>
             <div class="bg-white rounded-xl shadow p-5 border border-gray-100">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
+              >
                 <span class="font-bold text-indigo-700">Dhiera Solutions</span>
-                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0">Jun 2022 - Dec 2024</span>
+                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0"
+                  >Jun 2022 - Dec 2024</span
+                >
               </div>
-              <div class="text-gray-800 font-medium">Laravel Developer | SDE I</div>
+              <div class="text-gray-800 font-medium">
+                Laravel Developer | SDE I
+              </div>
             </div>
           </div>
           <!-- Skyline Infosys -->
           <div class="mb-10 ml-8">
-            <div class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 7V6a6 6 0 1112 0v1M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z"/></svg>
+            <div
+              class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow"
+            >
+              <svg
+                class="w-5 h-5 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 7V6a6 6 0 1112 0v1M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z"
+                />
+              </svg>
             </div>
             <div class="bg-white rounded-xl shadow p-5 border border-gray-100">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
+              >
                 <span class="font-bold text-indigo-700">Skyline Infosys</span>
-                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0">Apr 2022 - Jun 2022</span>
+                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0"
+                  >Apr 2022 - Jun 2022</span
+                >
               </div>
-              <div class="text-gray-800 font-medium">Laravel Developer | SDE I</div>
+              <div class="text-gray-800 font-medium">
+                Laravel Developer | SDE I
+              </div>
             </div>
           </div>
           <!-- Shreedama Technologies -->
           <div class="mb-2 ml-8">
-            <div class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-rocket" viewBox="0 0 16 16">
-                <path d="M8 8c.828 0 1.5-.895 1.5-2S8.828 4 8 4s-1.5.895-1.5 2S7.172 8 8 8"/>
-                <path d="M11.953 8.81c-.195-3.388-.968-5.507-1.777-6.819C9.707 1.233 9.23.751 8.857.454a3.5 3.5 0 0 0-.463-.315A2 2 0 0 0 8.25.064.55.55 0 0 0 8 0a.55.55 0 0 0-.266.073 2 2 0 0 0-.142.08 4 4 0 0 0-.459.33c-.37.308-.844.803-1.31 1.57-.805 1.322-1.577 3.433-1.774 6.756l-1.497 1.826-.004.005A2.5 2.5 0 0 0 2 12.202V15.5a.5.5 0 0 0 .9.3l1.125-1.5c.166-.222.42-.4.752-.57.214-.108.414-.192.625-.281l.198-.084c.7.428 1.55.635 2.4.635s1.7-.207 2.4-.635q.1.044.196.083c.213.09.413.174.627.282.332.17.586.348.752.57l1.125 1.5a.5.5 0 0 0 .9-.3v-3.298a2.5 2.5 0 0 0-.548-1.562zM12 10.445v.055c0 .866-.284 1.585-.75 2.14.146.064.292.13.425.199.39.197.8.46 1.1.86L13 14v-1.798a1.5 1.5 0 0 0-.327-.935zM4.75 12.64C4.284 12.085 4 11.366 4 10.5v-.054l-.673.82a1.5 1.5 0 0 0-.327.936V14l.225-.3c.3-.4.71-.664 1.1-.861.133-.068.279-.135.425-.199M8.009 1.073q.096.06.226.163c.284.226.683.621 1.09 1.28C10.137 3.836 11 6.237 11 10.5c0 .858-.374 1.48-.943 1.893C9.517 12.786 8.781 13 8 13s-1.517-.214-2.057-.607C5.373 11.979 5 11.358 5 10.5c0-4.182.86-6.586 1.677-7.928.409-.67.81-1.082 1.096-1.32q.136-.113.236-.18Z"/>
-                <path d="M9.479 14.361c-.48.093-.98.139-1.479.139s-.999-.046-1.479-.139L7.6 15.8a.5.5 0 0 0 .8 0z"/>
+            <div
+              class="absolute -left-5 top-2 w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center shadow"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-rocket"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 8c.828 0 1.5-.895 1.5-2S8.828 4 8 4s-1.5.895-1.5 2S7.172 8 8 8"
+                />
+                <path
+                  d="M11.953 8.81c-.195-3.388-.968-5.507-1.777-6.819C9.707 1.233 9.23.751 8.857.454a3.5 3.5 0 0 0-.463-.315A2 2 0 0 0 8.25.064.55.55 0 0 0 8 0a.55.55 0 0 0-.266.073 2 2 0 0 0-.142.08 4 4 0 0 0-.459.33c-.37.308-.844.803-1.31 1.57-.805 1.322-1.577 3.433-1.774 6.756l-1.497 1.826-.004.005A2.5 2.5 0 0 0 2 12.202V15.5a.5.5 0 0 0 .9.3l1.125-1.5c.166-.222.42-.4.752-.57.214-.108.414-.192.625-.281l.198-.084c.7.428 1.55.635 2.4.635s1.7-.207 2.4-.635q.1.044.196.083c.213.09.413.174.627.282.332.17.586.348.752.57l1.125 1.5a.5.5 0 0 0 .9-.3v-3.298a2.5 2.5 0 0 0-.548-1.562zM12 10.445v.055c0 .866-.284 1.585-.75 2.14.146.064.292.13.425.199.39.197.8.46 1.1.86L13 14v-1.798a1.5 1.5 0 0 0-.327-.935zM4.75 12.64C4.284 12.085 4 11.366 4 10.5v-.054l-.673.82a1.5 1.5 0 0 0-.327.936V14l.225-.3c.3-.4.71-.664 1.1-.861.133-.068.279-.135.425-.199M8.009 1.073q.096.06.226.163c.284.226.683.621 1.09 1.28C10.137 3.836 11 6.237 11 10.5c0 .858-.374 1.48-.943 1.893C9.517 12.786 8.781 13 8 13s-1.517-.214-2.057-.607C5.373 11.979 5 11.358 5 10.5c0-4.182.86-6.586 1.677-7.928.409-.67.81-1.082 1.096-1.32q.136-.113.236-.18Z"
+                />
+                <path
+                  d="M9.479 14.361c-.48.093-.98.139-1.479.139s-.999-.046-1.479-.139L7.6 15.8a.5.5 0 0 0 .8 0z"
+                />
               </svg>
             </div>
             <div class="bg-white rounded-xl shadow p-5 border border-gray-100">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                <span class="font-bold text-indigo-700">Shreedama Technologies</span>
-                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0">Jan 2020 – Apr 2022</span>
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1"
+              >
+                <span class="font-bold text-indigo-700"
+                  >Shreedama Technologies</span
+                >
+                <span class="text-xs text-gray-500 font-semibold mt-1 sm:mt-0"
+                  >Jan 2020 – Apr 2022</span
+                >
               </div>
-              <div class="text-gray-800 font-medium">Fresher | Laravel Developer</div>
+              <div class="text-gray-800 font-medium">
+                Fresher | Laravel Developer
+              </div>
             </div>
           </div>
         </div>
@@ -324,85 +1195,171 @@
           <span class="inline-block w-16 h-1 bg-indigo-200 rounded"></span>
         </div>
         <div class="grid md:grid-cols-2 gap-8">
-          <div class="p-6 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-lg transition group flex flex-col items-start">
+          <div
+            class="p-6 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-lg transition group flex flex-col items-start"
+          >
             <div class="flex items-center mb-2">
               <span class="bg-indigo-100 text-indigo-600 rounded-full p-2 mr-2">
-                
               </span>
-              <strong class="text-lg font-semibold text-indigo-700 group-hover:text-indigo-900 transition">NAHEP Remote Sensing</strong>
+              <strong
+                class="text-lg font-semibold text-indigo-700 group-hover:text-indigo-900 transition"
+                >NAHEP Remote Sensing</strong
+              >
             </div>
-            <p class="text-gray-700 text-sm mb-2">Blockchain-backed agri-market intelligence</p>
-            <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full font-semibold">2020</span>
+            <p class="text-gray-700 text-sm mb-2">
+              Blockchain-backed agri-market intelligence
+            </p>
+            <span
+              class="text-xs bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full font-semibold"
+              >2020</span
+            >
           </div>
-          <div class="p-6 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-lg transition group flex flex-col items-start">
+          <div
+            class="p-6 border border-gray-200 rounded-2xl bg-white shadow-sm hover:shadow-lg transition group flex flex-col items-start"
+          >
             <div class="flex items-center mb-2">
               <span class="bg-green-100 text-green-600 rounded-full p-2 mr-2">
-                
               </span>
-              <strong class="text-lg font-semibold text-green-700 group-hover:text-green-900 transition">IIRS Geo Processing</strong>
+              <strong
+                class="text-lg font-semibold text-green-700 group-hover:text-green-900 transition"
+                >IIRS Geo Processing</strong
+              >
             </div>
-            <p class="text-gray-700 text-sm mb-2">Python + GIS Data Automation</p>
-            <span class="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full font-semibold">2019</span>
+            <p class="text-gray-700 text-sm mb-2">
+              Python + GIS Data Automation
+            </p>
+            <span
+              class="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full font-semibold"
+              >2019</span
+            >
           </div>
         </div>
-      </section>    
+      </section>
 
-      <section id="education" class="flex justify-center ">
-        <div class="max-w-md w-full p-6 flex flex-col items-center bg-white rounded-2xl shadow-lg border border-gray-100">
-          <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full shadow mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-buildings-fill" viewBox="0 0 16 16">
-              <path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z"/>
+      <section id="education" class="flex justify-center">
+        <div
+          class="max-w-md w-full p-6 flex flex-col items-center bg-white rounded-2xl shadow-lg border border-gray-100"
+        >
+          <div
+            class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full shadow mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-buildings-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zM2 11h1v1H2zm2 0h1v1H4zm-1 2v1H2v-1zm1 0h1v1H4zm9-10v1h-1V3zM8 5h1v1H8zm1 2v1H8V7zM8 9h1v1H8zm2 0h1v1h-1zm-1 2v1H8v-1zm1 0h1v1h-1zm3-2v1h-1V9zm-1 2h1v1h-1zm-2-4h1v1h-1zm3 0v1h-1V7zm-2-2v1h-1V5zm1 0h1v1h-1z"
+              />
             </svg>
           </div>
           <h3 class="text-2xl font-semibold mb-2 text-center">Education</h3>
           <div class="flex justify-center mb-4">
             <span class="inline-block w-16 h-1 bg-indigo-200 rounded"></span>
           </div>
-          <span class="bg-indigo-50 text-indigo-700 px-4 py-1 rounded-full text-sm font-bold mb-3">B.Tech in IT</span>
+          <span
+            class="bg-indigo-50 text-indigo-700 px-4 py-1 rounded-full text-sm font-bold mb-3"
+            >B.Tech in IT</span
+          >
           <div class="text-center">
-            <div class="text-lg font-semibold text-gray-800 mb-1">College of AIT</div>
+            <div class="text-lg font-semibold text-gray-800 mb-1">
+              College of AIT
+            </div>
             <div class="text-gray-500 mb-2">Anand, Gujarat</div>
-            <div class="text-xs bg-gray-100 text-gray-700 px-3 py-0.5 rounded-full font-semibold inline-block">2017–2020</div>
+            <div
+              class="text-xs bg-gray-100 text-gray-700 px-3 py-0.5 rounded-full font-semibold inline-block"
+            >
+              2017–2020
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="flex justify-center ">
+      <section id="contact" class="flex justify-center">
         <div class="p-8 max-w-xl w-full flex flex-col items-center">
-          
           <h3 class="text-2xl font-semibold mb-2 text-center">Contact</h3>
           <div class="flex justify-center mb-4">
             <span class="inline-block w-16 h-1 bg-indigo-200 rounded"></span>
           </div>
           <ul class="space-y-4 mt-6 w-full px-4">
             <li class="flex items-center gap-3">
-              <span class="bg-indigo-50 text-indigo-600 rounded-full p-2 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              <span
+                class="bg-indigo-50 text-indigo-600 rounded-full p-2 flex-shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-envelope"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                  />
                 </svg>
               </span>
-              <a href="mailto:rohititaliaya@gmail.com" class="text-indigo-700 font-semibold hover:underline">rohititaliaya@gmail.com</a>
+              <a
+                href="mailto:rohititaliaya@gmail.com"
+                class="text-indigo-700 font-semibold hover:underline"
+                >rohititaliaya@gmail.com</a
+              >
             </li>
             <li class="flex items-center gap-3">
-              <span class="bg-green-50 text-green-600 rounded-full p-2 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+              <span
+                class="bg-green-50 text-green-600 rounded-full p-2 flex-shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-whatsapp"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                  />
                 </svg>
               </span>
-              <a href="tel:+918200713200" class="text-green-700 font-semibold hover:underline">+91 8200713200</a>
+              <a
+                href="tel:+918200713200"
+                class="text-green-700 font-semibold hover:underline"
+                >+91 8200713200</a
+              >
             </li>
             <li class="flex items-center gap-3">
-              <span class="bg-blue-50 text-blue-600 rounded-full p-2 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.844-1.563 3.042 0 3.604 2.002 3.604 4.604v5.592z"/></svg>
+              <span
+                class="bg-blue-50 text-blue-600 rounded-full p-2 flex-shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.844-1.563 3.042 0 3.604 2.002 3.604 4.604v5.592z"
+                  />
+                </svg>
               </span>
-              <a href="https://linkedin.com/in/rohit-italiya" class="text-blue-700 font-semibold hover:underline">linkedin.com/in/rohit-italiya</a>
+              <a
+                href="https://linkedin.com/in/rohit-italiya"
+                class="text-blue-700 font-semibold hover:underline"
+                >linkedin.com/in/rohit-italiya</a
+              >
             </li>
           </ul>
         </div>
       </section>
     </main>
 
-    <footer class="bg-indigo-50 mt-20 border-t border-gray-200 py-12 text-center text-sm text-gray-500">
+    <footer
+      class="bg-indigo-50 mt-20 border-t border-gray-200 py-12 text-center text-sm text-gray-500"
+    >
       <p class="mt-8">© 2025 Rohit Italiya. All rights reserved.</p>
     </footer>
   </body>
