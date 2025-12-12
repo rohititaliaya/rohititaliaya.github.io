@@ -1,705 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohit Italiya | Laravel Developer | Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <link rel="icon" href="images/r-char.svg">  
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        font-family: "Poppins", sans-serif;
-        background: #0a0a0a;
-        color: #ffffff;
-        overflow-x: hidden;
-      }
-      
-      [x-cloak] {
-        display: none !important;
-      }
-      
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Orange accent color */
-      :root {
-        --orange: #FF6B35;
-        --orange-glow: rgba(255, 107, 53, 0.4);
-        --dark-bg: #0a0a0a;
-        --card-bg: rgba(20, 20, 20, 0.8);
-        --border-color: rgba(255, 107, 53, 0.2);
-      }
-      
-      /* Glassmorphism card effect */
-      .glass-card {
-        background: var(--card-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        transition: all 0.3s ease;
-      }
-      
-      .glass-card:hover {
-        border-color: var(--orange);
-        box-shadow: 0 8px 32px var(--orange-glow);
-        transform: translateY(-4px);
-      }
-      
-      /* Orange glow button */
-      .btn-orange {
-        background: linear-gradient(135deg, var(--orange), #ff8c5a);
-        color: white;
-        padding: 14px 32px;
-        border-radius: 50px;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 20px var(--orange-glow);
-        border: none;
-        cursor: pointer;
-      }
-      
-      .btn-orange:hover {
-        box-shadow: 0 6px 30px rgba(255, 107, 53, 0.6);
-        transform: translateY(-2px);
-      }
-      
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        padding: 14px 32px;
-        border-radius: 50px;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      
-      .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: var(--orange);
-      }
-      
-      /* Section styling */
-      section {
-        position: relative;
-      }
-      
-      /* Accent line */
-      .accent-line {
-        width: 60px;
-        height: 4px;
-        background: linear-gradient(90deg, var(--orange), transparent);
-        border-radius: 2px;
-        margin: 0 auto 24px;
-      }
-      
-      /* Skill icons hover effect */
-      .skill-icon {
-        transition: all 0.3s ease;
-      }
-      
-      .skill-icon:hover {
-        transform: scale(1.1) translateY(-4px);
-        filter: drop-shadow(0 4px 12px var(--orange-glow));
-      }
-      
-      /* Project card styles */
-      .project-card {
-        background: var(--card-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        transition: all 0.3s ease;
-        overflow: hidden;
-      }
-      
-      .project-card:hover {
-        border-color: var(--orange);
-        box-shadow: 0 8px 32px var(--orange-glow);
-        transform: translateY(-4px);
-      }
-      
-      /* Navigation */
-      header {
-        background: rgba(10, 10, 10, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 107, 53, 0.1);
-      }
-      
-      /* Navigation link hover effects */
-      nav a {
-        position: relative;
-        display: inline-block;
-        transition: all 0.3s ease;
-      }
-      
-      nav a::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, var(--orange), #ff8c5a);
-        transition: width 0.3s ease;
-      }
-      
-      nav a:hover::after {
-        width: 100%;
-      }
-      
-      nav a:hover {
-        color: var(--orange) !important;
-        transform: translateY(-2px);
-      }
-      
-      /* Text gradient */
-      .text-gradient {
-        background: linear-gradient(135deg, #ffffff, var(--orange));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      /* Animations */
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-      }
-      
-      @keyframes glow {
-        0%, 100% { box-shadow: 0 0 20px var(--orange-glow); }
-        50% { box-shadow: 0 0 40px var(--orange-glow); }
-      }
-      
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
-      }
-      
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: #0a0a0a;
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background: var(--orange);
-        border-radius: 5px;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: #ff8c5a;
-      }
-      
-      /* Experience Timeline */
-      .timeline-container {
-        position: relative;
-        min-height: 100%;
-      }
-      
-      .timeline-line {
-        position: absolute;
-        left: 2rem;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom, var(--orange), rgba(255, 107, 53, 0.4), transparent);
-        height: 100%;
-      }
-      
-      @media (min-width: 768px) {
-        .timeline-line {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-    </style>
-  </head>
-  <body class="bg-black text-white">
-    <!-- Sticky Minimal Top Navigation -->
-    <header
-      class="sticky top-0 z-50 shadow-lg border-bottom border-gray-800 "
-      x-data="{ open: false }"
-      style="background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 107, 53, 0.1);"
-    >
-      <div
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
-      >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohit Italiya | Laravel Developer | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="icon" href="images/r-char.svg">
+  <style>
+    @import "./css/common.css";
+  </style>
+</head>
+
+<body class="bg-black text-white">
+  <!-- Sticky Minimal Top Navigation -->
+  <header class="sticky top-0 z-50 shadow-lg border-bottom border-gray-800 " x-data="{ open: false }"
+    style="background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 107, 53, 0.1);">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <h1 class="text-2xl font-extrabold tracking-tight text-gradient align-bottom">
-          Rohit Italiya
-        </h1>
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex space-x-10 text-sm text-lg">
-          <a href="#bio" class="text-gray-300 hover:text-orange-500 transition"
-            >About</a
-            >
-            <a href="#projects" class="text-gray-300 hover:text-orange-500 transition"
-              >Projects</a
-            >
-          <a href="#skills" class="text-gray-300 hover:text-orange-500 transition"
-            >Skills</a
-          >
-          <a href="#contact" class="text-gray-300 hover:text-orange-500 transition"
-            >Contact</a
-          >
-        </nav>
-        <!-- Hamburger Button -->
-        <button
-          @click="open = !open"
-          class="md:hidden flex items-center px-2 py-1 text-gray-300 hover:text-orange-500 focus:outline-none"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            class="h-7 w-7"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <!-- Mobile Nav -->
-      <nav
-        class="md:hidden"
-        x-show="open"
-        x-cloak
-        @click.away="open = false"
-        x-transition
-      >
-        <div
-          class="px-6 pb-4 pt-2 flex flex-col space-y-2 shadow"
-          style="background: rgba(10, 10, 10, 0.98); border-bottom: 1px solid rgba(255, 107, 53, 0.1);"
-        >
-          <a href="#bio" class="text-gray-300 hover:text-orange-500 transition py-1"
-            >About</a
-          >
-          <a
-            href="#projects"
-            class="text-gray-300 hover:text-orange-500 transition py-1"
-            >Projects</a
-          >
-          <a
-            href="#skills"
-            class="text-gray-300 hover:text-orange-500 transition py-1"
-            >Skills</a
-          >
-          <a
-            href="#contact"
-            class="text-gray-300 hover:text-orange-500 transition py-1"
-            >Contact</a
-          >
-        </div>
+        Rohit Italiya
+      </h1>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-10 text-sm text-lg">
+        <a href="#bio" class="text-gray-300 hover:text-orange-500 transition">About</a>
+        <a href="#projects" class="text-gray-300 hover:text-orange-500 transition">Projects</a>
+        <a href="#skills" class="text-gray-300 hover:text-orange-500 transition">Skills</a>
+        <a href="#contact" class="text-gray-300 hover:text-orange-500 transition">Contact</a>
       </nav>
-    </header>
-
-    <!-- Hero Section: Avatar, Name, Tagline, CTA -->
-    <section class="relative py-32 md:py-40 text-center overflow-hidden" style="background: linear-gradient(180deg, #0a0a0a 0%, #1a0a05 100%);">
-      <!-- Animated background elements -->
-      <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full filter blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-orange-600 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+      <!-- Hamburger Button -->
+      <button @click="open = !open"
+        class="md:hidden flex items-center px-2 py-1 text-gray-300 hover:text-orange-500 focus:outline-none"
+        aria-label="Toggle navigation">
+        <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Nav -->
+    <nav class="md:hidden" x-show="open" x-cloak @click.away="open = false" x-transition>
+      <div class="px-6 pb-4 pt-2 flex flex-col space-y-2 shadow"
+        style="background: rgba(10, 10, 10, 0.98); border-bottom: 1px solid rgba(255, 107, 53, 0.1);">
+        <a href="#bio" class="text-gray-300 hover:text-orange-500 transition py-1">About</a>
+        <a href="#projects" class="text-gray-300 hover:text-orange-500 transition py-1">Projects</a>
+        <a href="#skills" class="text-gray-300 hover:text-orange-500 transition py-1">Skills</a>
+        <a href="#contact" class="text-gray-300 hover:text-orange-500 transition py-1">Contact</a>
       </div>
-      
-      <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10 px-6">
-        <!-- <img src="/images/rohititaliaya.jpg" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 shadow-2xl object-cover mb-6 animate-float" style="border-color: var(--orange); box-shadow: 0 0 40px var(--orange-glow);" alt="Rohit Italiya" /> -->
-        
-        
-        <!-- Name First -->
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6" style="color: #ffffff; font-weight: 700;">
-          Rohit Italiya
-        </h1>
-        
-        <p class="text-2xl sm:text-3xl md:text-4xl inline-flex mb-6 text-red-500"><img src="/images/laravel-top.svg" width="50" height="50" alt="Rohit Italiya Laravel Developer"> &nbsp;Laravel Developer</p>
+    </nav>
+  </header>
 
-        <p class="text-2xl sm:text-3xl md:text-3xl text-grey flex flex-wrap fs-24 pb-4 text-center mb-6">
-          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"></path></svg> 
-          &nbsp; Proficient in VueJS & Full-Stack Development 🌟</p>
-        <!-- Title/Role -->
-        <!-- <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-gradient" style="font-weight: 600;">
+  <!-- Hero Section: Avatar, Name, Tagline, CTA -->
+  <section class="relative py-32 md:py-40 text-center overflow-hidden"
+    style="background: linear-gradient(180deg, #0a0a0a 0%, #1a0a05 100%);">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full filter blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-orange-600 rounded-full filter blur-3xl animate-pulse"
+        style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10 px-6">
+      <!-- <img src="/images/rohititaliaya.jpg" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 shadow-2xl object-cover mb-6 animate-float" style="border-color: var(--orange); box-shadow: 0 0 40px var(--orange-glow);" alt="Rohit Italiya" /> -->
+
+
+      <!-- Name First -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+        style="color: #ffffff; font-weight: 700;">
+        Rohit Italiya
+      </h1>
+
+      <p class="text-2xl sm:text-3xl md:text-4xl inline-flex mb-6 text-red-500"><img src="/images/laravel-top.svg"
+          width="50" height="50" alt="Rohit Italiya Laravel Developer"> &nbsp;Laravel Developer</p>
+
+      <p class="text-2xl sm:text-3xl md:text-3xl text-grey flex flex-wrap fs-24 pb-4 text-center mb-6">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2">
+          </path>
+        </svg>
+        &nbsp; Proficient in VueJS & Full-Stack Development 🌟
+      </p>
+      <!-- Title/Role -->
+      <!-- <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-gradient" style="font-weight: 600;">
           Laravel and VueJS Developer
         </h2> -->
-        
-        <!-- Description -->
-        <!-- <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed" style="font-weight: 400;">
+
+      <!-- Description -->
+      <!-- <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed" style="font-weight: 400;">
           Senior Laravel Engineer helping visionary founders and product teams launch scalable, bug-free apps—on time.
         </p> -->
-        
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
-          <a href="mailto:rohititaliaya@gmail.com" class="btn-orange text-base md:text-lg">Contact Me</a>
-          <a href="./cv/CV_Rohit_Italiya_Laravel_Developer.pdf" download class="btn-secondary text-base md:text-lg">Download Resume</a>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+        <a href="#contact" class="btn-orange text-base md:text-lg">Contact Me</a>
+        <a href="./cv/CV_Rohit_Italiya_Laravel_Developer.pdf" download
+          class="btn-secondary text-base md:text-lg">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Sections -->
+  <main class="max-w-7xl mx-auto px-6 py-16 space-y-24">
+    <section id="bio" class="flex justify-center py-12">
+      <div class="glass-card p-10 max-w-3xl w-full flex flex-col items-center">
+        <div class="flex items-center justify-center w-16 h-16 rounded-full shadow-lg mb-6"
+          style="background: rgba(255, 107, 53, 0.2); color: var(--orange);">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold mb-3 text-center text-white">A little bit about me</h3>
+        <div class="accent-line"></div>
+        <p class="text-gray-300 text-lg text-center mb-8 leading-relaxed">Experienced Laravel Developer with over 5
+          years of expertise in building scalable, high-performance web applications. Strong command of MySQL, jQuery,
+          and VueJS, with a proven ability to deliver clean, efficient code and meet tight deadlines. Skilled in the
+          full software development lifecycle, from requirements gathering and system architecture to deployment and
+          maintenance.</p>
+        <div class="flex flex-wrap justify-center gap-3 mt-4">
+          <span class="px-4 py-2 rounded-full text-sm font-semibold"
+            style="background: rgba(255, 107, 53, 0.2); color: var(--orange); border: 1px solid var(--border-color);">5+
+            Years Experience</span>
+          <span class="px-4 py-2 rounded-full text-sm font-semibold"
+            style="background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2);">Laravel
+            & VueJS</span>
+          <span class="px-4 py-2 rounded-full text-sm font-semibold"
+            style="background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.2);">AWS &
+            Docker</span>
         </div>
       </div>
     </section>
 
-    
-
-    <!-- Main Sections -->
-    <main class="max-w-7xl mx-auto px-6 py-16 space-y-24">
-      <section id="bio" class="flex justify-center py-12">
-        <div class="glass-card p-10 max-w-3xl w-full flex flex-col items-center">
-          <div class="flex items-center justify-center w-16 h-16 rounded-full shadow-lg mb-6" style="background: rgba(255, 107, 53, 0.2); color: var(--orange);">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
+    <section id="projects" class="py-16">
+      <h3 class="text-3xl font-bold mb-3 text-center text-white">Projects</h3>
+      <div class="accent-line"></div>
+      <p class="text-center text-gray-300 mb-10 text-lg">Projects that prove the code works—and the business grows.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="project-card p-6 flex flex-col h-full">
+          <div class="project-preview mb-4">
+            <iframe src="https://xinva.ai/" loading="lazy" title="Xinva Preview"></iframe>
           </div>
-          <h3 class="text-3xl font-bold mb-3 text-center text-white">A little bit about me</h3>
-          <div class="accent-line"></div>
-          <p class="text-gray-300 text-lg text-center mb-8 leading-relaxed">Experienced Laravel Developer with over 5 years of expertise in building scalable, high-performance web applications. Strong command of MySQL, jQuery, and VueJS, with a proven ability to deliver clean, efficient code and meet tight deadlines. Skilled in the full software development lifecycle, from requirements gathering and system architecture to deployment and maintenance.</p>
-          <!-- <ul class="list-none text-center text-gray-300 space-y-2 mb-8">
-            <li class="flex items-center justify-center gap-2"><span class="text-orange-500">✓</span> Launched robust SaaS products ahead of schedule</li>
-            <li class="flex items-center justify-center gap-2"><span class="text-orange-500">✓</span> Cut onboarding times and improved conversion rates</li>
-            <li class="flex items-center justify-center gap-2"><span class="text-orange-500">✓</span> Delivered 100% on-time, on-budget projects</li>
-          </ul> -->
-          <div class="flex flex-wrap justify-center gap-3 mt-4">
-            <span class="px-4 py-2 rounded-full text-sm font-semibold" style="background: rgba(255, 107, 53, 0.2); color: var(--orange); border: 1px solid var(--border-color);">5+ Years Experience</span>
-            <span class="px-4 py-2 rounded-full text-sm font-semibold" style="background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.2);">Laravel & VueJS</span>
-            <span class="px-4 py-2 rounded-full text-sm font-semibold" style="background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.2);">AWS & Docker</span>
-          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Xinva</h4>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">AI image generator platform. Integrated
+            Replicate and Mid Journey APIs to create a robust AI image generation system.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">VueJS</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">API
+              Integration</span></div>
+          <a href="https://xinva.ai/" target="_blank"
+            class="inline-flex items-center font-medium text-sm transition hover:underline self-start"
+            style="color: var(--orange);">View Project →</a>
         </div>
-      </section>
 
-      <section id="projects" class="py-16">
-        <h3 class="text-3xl font-bold mb-3 text-center text-white">Projects</h3>
-        <div class="accent-line"></div>
-        <p class="text-center text-gray-300 mb-10 text-lg">Projects that prove the code works—and the business grows.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="project-card p-6 flex flex-col h-full">
-            <div class="bg-white/5 rounded-lg p-4 mb-4 flex items-center justify-center" style="height: 200px;">
-              <img src="https://xinva.ai/wp-content/uploads/2023/04/Main-Brand-Logo-For-Xinva.png" alt="Xinva" class="max-w-full max-h-full object-contain"/>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-3">Xinva</h4>
-            <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">AI image generator platform. Integrated Replicate and Mid Journey APIs to create a robust AI image generation system.</p>
-            <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">VueJS</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">API Integration</span></div>
-            <a href="https://xinva.ai/" target="_blank" class="inline-flex items-center font-medium text-sm transition hover:underline self-start" style="color: var(--orange);">View Project →</a>
+        <div class="project-card p-6 flex flex-col h-full">
+          <div class="project-preview mb-4">
+            <iframe src="https://crikk.com/" loading="lazy" title="Crikk Preview"></iframe>
           </div>
-
-          <div class="project-card p-6 flex flex-col h-full">
-            <div class="bg-white/5 rounded-lg p-4 mb-4 flex items-center justify-center" style="height: 200px;">
-              <img src="https://crikk.com/sale/images/logo.png" alt="Crikk" class="max-w-full max-h-full object-contain"/>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-3">Crikk</h4>
-            <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">Modern platform for seamless online collaboration and content sharing. Built scalable backend with Laravel and MySQL.</p>
-            <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Tailwind CSS</span></div>
-            <a href="https://crikk.com/" target="_blank" class="inline-flex items-center font-medium text-sm transition hover:underline self-start" style="color: var(--orange);">View Project →</a>
-          </div>
-
-          <div class="project-card p-6 flex flex-col h-full">
-            <div class="bg-white/5 rounded-lg p-4 mb-4 flex items-center justify-center" style="height: 200px;">
-              <img src="https://www.shantijewel.com/assets/image/logo.png" alt="Shanti Jewels" class="max-w-full max-h-full object-contain"/>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-3">Shanti Jewels</h4>
-            <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">E-commerce platform for jewellery industry with dynamic product listings, secure checkout, and user management.</p>
-            <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">HTML</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">SCSS</span></div>
-            <a href="https://www.shantijewel.com/" target="_blank" class="inline-flex items-center font-medium text-sm transition hover:underline self-start" style="color: var(--orange);">View Project →</a>
-          </div>
-
-          <div class="project-card p-6 flex flex-col h-full">
-            <div class="bg-white/5 rounded-lg p-4 mb-4 flex items-center justify-center" style="height: 200px;">
-              <img src="https://steer.education/wp-content/themes/AboveTheme/assets/images/svg/STEER_Logo.svg" alt="Steer Education" class="max-w-full max-h-full object-contain"/>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-3">Steer Education</h4>
-            <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">Educational platform providing comprehensive learning solutions and student management systems.</p>
-            <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">VueJS</span></div>
-            <a href="https://steer.education/" target="_blank" class="inline-flex items-center font-medium text-sm transition hover:underline self-start" style="color: var(--orange);">View Project →</a>
-          </div>
-
-          <div class="project-card p-6 flex flex-col h-full">
-            <div class="bg-white/5 rounded-lg p-4 mb-4 flex items-center justify-center" style="height: 200px;">
-              <img src="https://swxn.ai/front/images/swan.png" alt="Swaniel" class="max-w-full max-h-full object-contain"/>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-3">Swaniel</h4>
-            <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">AI-powered platform delivering innovative solutions with cutting-edge technology.</p>
-            <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">AI Integration</span></div>
-            <a href="https://swxn.ai/" target="_blank" class="inline-flex items-center font-medium text-sm transition hover:underline self-start" style="color: var(--orange);">View Project →</a>
-          </div>
-
-          <div class="project-card p-6 flex flex-col h-full">
-            <div class="bg-white/5 rounded-lg p-4 mb-4 flex items-center justify-center" style="height: 200px;">
-              <img src="https://swoopos.com/assets/logo-CbAWBXgK.png" alt="Swoopos" class="max-w-full max-h-full object-contain"/>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-3">Swoopos</h4>
-            <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">Point of sale system with inventory management and business analytics.</p>
-            <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">VueJS</span></div>
-            <a href="https://swoopos.com/" target="_blank" class="inline-flex items-center font-medium text-sm transition hover:underline self-start" style="color: var(--orange);">View Project →</a>
-          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Crikk</h4>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">Modern platform for seamless online
+            collaboration and content sharing. Built scalable backend with Laravel and MySQL.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Tailwind
+              CSS</span></div>
+          <a href="https://crikk.com/" target="_blank"
+            class="inline-flex items-center font-medium text-sm transition hover:underline self-start"
+            style="color: var(--orange);">View Project →</a>
         </div>
-      </section>
 
-      <section id="skills" class="flex justify-center py-16">
-        <div class="max-w-6xl w-full px-6">
-          <h3 class="text-3xl font-bold mb-3 text-center text-white">
-            My Skills
-          </h3>
-          <div class="accent-line"></div>
-      
-          <!-- Grid with card-based skills -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-      
-            <!-- Laravel -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://laravel.com/img/favicon/apple-touch-icon.png" class="w-16 h-16 mb-3" alt="Laravel"/>
-              <span class="text-sm font-medium text-gray-300">Laravel</span>
-            </div>
-      
-            <!-- VueJS -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="w-16 h-16 mb-3" alt="VueJS"/>
-              <span class="text-sm font-medium text-gray-300">Vue.js</span>
-            </div>
-      
-            <!-- Livewire -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://laravel-livewire.com/favicon.ico" class="w-16 h-16 mb-3" alt="Livewire"/>
-              <span class="text-sm font-medium text-gray-300">Livewire</span>
-            </div>
-      
-            <!-- Filament -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://filamentphp.com/favicon/favicon-32x32.png" class="w-16 h-16 mb-3" alt="Filament"/>
-              <span class="text-sm font-medium text-gray-300">Filament</span>
-            </div>
-      
-            <!-- MySQL -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-16 h-16 mb-3" alt="MySQL"/>
-              <span class="text-sm font-medium text-gray-300">MySQL</span>
-            </div>
-      
-            <!-- Docker -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-16 h-16 mb-3" alt="Docker"/>
-              <span class="text-sm font-medium text-gray-300">Docker</span>
-            </div>
-      
-            <!-- AWS -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/250px-Amazon_Web_Services_Logo.svg.png" class="w-16 h-16 mb-3" alt="AWS"/>
-              <span class="text-sm font-medium text-gray-300">AWS</span>
-            </div>
-      
-            <!-- GitHub -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-16 h-16 mb-3" alt="GitHub"/>
-              <span class="text-sm font-medium text-gray-300">GitHub</span>
-            </div>
-      
-            <!-- GitLab -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" class="w-16 h-16 mb-3" alt="GitLab"/>
-              <span class="text-sm font-medium text-gray-300">GitLab</span>
-            </div>
-      
-            <!-- Jira -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" class="w-16 h-16 mb-3" alt="Jira"/>
-              <span class="text-sm font-medium text-gray-300">Jira</span>
-            </div>
-      
-            <!-- Ubuntu -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <svg class="w-16 h-16 mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                <circle cx="16" cy="16" r="16" fill="#dd4814"/>
-                <path d="M5.12 13.864a2.137 2.137 0 1 0 0 4.273 2.137 2.137 0 0 0 0-4.273zm19.256 9.71a2.25 2.25 0 1 0 4.123-2.135 2.25 2.25 0 0 0-4.123 2.135zM9.76 16a6.23 6.23 0 0 1 2.653-5.105L10.852 8.28a9.3 9.3 0 0 0-3.838 5.394C7.69 14.224 8.12 15.06 8.12 16s-.432 1.776-1.106 2.326c.577 2.237 1.968 4.146 3.838 5.395l1.562-2.616A6.23 6.23 0 0 1 9.761 16zM16 9.76a6.24 6.24 0 0 1 6.215 5.687l3.044-.045a9.25 9.25 0 0 0-2.757-6.019c-.812.307-1.75.26-2.56-.208a2.99 2.99 0 0 1-1.461-2.118C17.7 6.84 16.86 6.72 16 6.72c-1.477 0-2.873.347-4.113.96l1.484 2.66c.8-.372 1.69-.58 2.628-.58zm0 12.48c-.94 0-1.83-.21-2.628-.58l-1.484 2.66c1.24.614 2.636.96 4.113.96a9.28 9.28 0 0 0 2.479-.338c.14-.858.65-1.648 1.46-2.118s1.75-.514 2.56-.207a9.25 9.25 0 0 0 2.757-6.019l-3.045-.045A6.24 6.24 0 0 1 16 22.24z" fill="#fff"/>
-              </svg>
-              <span class="text-sm font-medium text-gray-300">Ubuntu</span>
-            </div>
-
-            <!-- Nginx -->
-            <div class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
-              <svg class="w-16 h-16 mb-3" xmlns="http://www.w3.org/2000/svg" height="2500" preserveAspectRatio="xMidYMid" viewBox="0 -0.698 256 292.23699999999997" width="2500"><path d="M2.054 218.187c1.32 2.347 3.227 4.108 5.575 5.428l112.962 65.137c4.695 2.787 10.416 2.787 14.964 0l112.963-65.137c4.695-2.64 7.482-7.629 7.482-13.057V80.284c0-5.428-2.787-10.416-7.482-13.056L135.555 2.09c-4.694-2.788-10.416-2.788-14.964 0L7.63 67.228C2.787 69.868 0 74.856 0 80.284v130.42c0 2.642.587 5.136 2.054 7.483" fill="#009639"/><path d="M91.837 195.154a14.463 14.463 0 0 1-14.524 14.524 14.463 14.463 0 0 1-14.523-14.524V95.542c0-7.776 6.895-14.084 16.43-14.084 6.896 0 14.965 2.787 19.806 8.802l4.4 5.282 60.737 72.618V95.835c0-8.069 6.455-14.524 14.524-14.524s14.523 6.455 14.523 14.524v99.613c0 7.775-6.895 14.083-16.43 14.083-6.896 0-14.965-2.787-19.806-8.802l-65.137-77.754z" fill="#fff"/></svg>
-              <span class="text-sm font-medium text-gray-300">Nginx</span>
-            </div>
-      
+        <div class="project-card p-6 flex flex-col h-full">
+          <div class="project-preview mb-4">
+            <iframe src="https://www.shantijewel.com/" loading="lazy" title="Shanti Jewels Preview"></iframe>
           </div>
+          <h4 class="text-xl font-bold text-white mb-3">Shanti Jewels</h4>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">E-commerce platform for jewellery industry
+            with dynamic product listings, secure checkout, and user management.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">HTML</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">SCSS</span>
+          </div>
+          <a href="https://www.shantijewel.com/" target="_blank"
+            class="inline-flex items-center font-medium text-sm transition hover:underline self-start"
+            style="color: var(--orange);">View Project →</a>
         </div>
-      </section>
-      
-      <!-- Professional Experience Section -->
-      <section id="experience" class="py-16">
+
+        <div class="project-card p-6 flex flex-col h-full">
+          <div class="project-preview mb-4">
+            <iframe src="https://www.tommypic.com/" loading="lazy" title="Tommypic Preview"></iframe>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Tommypic</h4>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">AI Tools For Creators. AI tools for image
+            generation</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MERN
+              Stack</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MongoDB</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Tailwind
+              CSS</span>
+          </div>
+          <a href="https://www.tommypic.com/" target="_blank"
+            class="inline-flex items-center font-medium text-sm transition hover:underline self-start"
+            style="color: var(--orange);">View Project →</a>
+        </div>
+
+        <div class="project-card p-6 flex flex-col h-full">
+          <div class="project-preview mb-4">
+            <iframe src="https://swxn.ai/" loading="lazy" title="Swaniel Preview"></iframe>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Swaniel</h4>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">AI-powered platform delivering innovative
+            solutions with cutting-edge technology.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">AI
+              Integration</span></div>
+          <a href="https://swxn.ai/" target="_blank"
+            class="inline-flex items-center font-medium text-sm transition hover:underline self-start"
+            style="color: var(--orange);">View Project →</a>
+        </div>
+
+        <div class="project-card p-6 flex flex-col h-full">
+          <div class="project-preview mb-4">
+            <iframe src="https://swoopos.com/" loading="lazy" title="Swoopos Preview"></iframe>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Swoopos</h4>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">Point of sale system with inventory management
+            and business analytics.</p>
+          <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">Laravel</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">MySQL</span><span
+              class="px-3 py-1 rounded-full text-xs font-medium"
+              style="background: rgba(255, 107, 53, 0.1); color: var(--orange); border: 1px solid rgba(255, 107, 53, 0.3);">VueJS</span>
+          </div>
+          <a href="https://swoopos.com/" target="_blank"
+            class="inline-flex items-center font-medium text-sm transition hover:underline self-start"
+            style="color: var(--orange);">View Project →</a>
+        </div>
+      </div>
+
+      <!-- View All Projects Button -->
+      <div class="flex justify-center mt-12">
+        <a href="./project.html#projects" class="btn-orange text-base md:text-lg">
+          View All Projects →
+        </a>
+      </div>
+    </section>
+
+    <section id="skills" class="flex justify-center py-16">
+      <div class="max-w-6xl w-full px-6">
         <h3 class="text-3xl font-bold mb-3 text-center text-white">
-          Professional Experience
+          My Skills
         </h3>
         <div class="accent-line"></div>
-        <p class="text-center text-gray-300 mb-12 text-lg">My journey in software development</p>
-        
-        <div class="max-w-4xl mx-auto timeline-container">
-          <!-- Timeline line -->
-          <div class="timeline-line"></div>
-          
-          <!-- Experience Items -->
-          
-          <!-- Self Employed -->
-          <div class="relative mb-12 md:mb-16">
-            <div class="flex items-center mb-4">
-              <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2" style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
-              <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2" style="background: rgba(255, 107, 53, 0.2); color: var(--orange); border: 1px solid var(--border-color);">Aug 2024 - Present</span>
-              </div>
-            </div>
-            <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
-              <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
-                <h4 class="text-xl font-bold text-white mb-2">Sr. Laravel Developer</h4>
-                <p class="text-orange-500 font-semibold mb-1">Self Employed</p>
-                <p class="text-gray-400 text-sm mb-3">Surat, India</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Whyphy Infotech -->
-          <div class="relative mb-12 md:mb-16">
-            <div class="flex items-center mb-4">
-              <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2" style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
-              <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2" style="background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3);">Jan 2024 - Aug 2024</span>
-              </div>
-            </div>
-            <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
-              <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
-                <h4 class="text-xl font-bold text-white mb-2">Sr. Laravel Developer</h4>
-                <p class="text-orange-500 font-semibold mb-1">Whyphy Infotech</p>
-                <p class="text-gray-400 text-sm mb-3">Surat, India</p>
-                <ul class="text-gray-300 text-sm space-y-2 list-none">
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Made enhancements and updates to RESTful APIs within the existing SWOOPOS POS system</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Implemented new features, including "Combo Offer Apply" and "Upsell Group" functionalities</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Contributed to HPOS projects by modernizing the Web KDS (Kitchen Display System), transitioning it from the legacy version to a new version using Vue.js</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Dhiera Solutions -->
-          <div class="relative mb-12 md:mb-16">
-            <div class="flex items-center mb-4">
-              <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2" style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
-              <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3);">Jun 2022 - Dec 2024</span>
-              </div>
-            </div>
-            <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
-              <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
-                <h4 class="text-xl font-bold text-white mb-2">FullStack Laravel Developer</h4>
-                <p class="text-orange-500 font-semibold mb-1">Dhiera Solutions</p>
-                <p class="text-gray-400 text-sm mb-3">Surat, India</p>
-                <ul class="text-gray-300 text-sm space-y-2 list-none">
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Worked on SaaS Projects with making the UI/UX better flow for setting good user experience in the Laravel Application</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Handled the DevOps things in the Shopify plugin developed in Laravel backend and Frontend</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Specialized in Deploying, Version controlling the projects on AWS EC2 server and Manage CI/CD pipeline with continuous Deployment</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Skyline Infosys -->
-          <div class="relative mb-12 md:mb-16">
-            <div class="flex items-center mb-4">
-              <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2" style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
-              <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2" style="background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3);">Apr 2022 - Jun 2022</span>
-              </div>
-            </div>
-            <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
-              <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
-                <h4 class="text-xl font-bold text-white mb-2">Laravel Developer</h4>
-                <p class="text-orange-500 font-semibold mb-1">Skyline Infosys</p>
-                <p class="text-gray-400 text-sm mb-3">Surat, India</p>
-                <ul class="text-gray-300 text-sm space-y-2 list-none">
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Followed Agile methodology working with Enterprise Client for Schooling Platform Steer.global</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Involved in daily task updates and meetings communication</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Used ticket System in Jira and Trello with the git tokens for tracking the task progress and updating and pulling the completed task in three stages of the project like dev, mirror and live</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>The ability to listen to issues carefully and identify sources of conflict, come up with alternative solutions and put a remedy into action</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Shreedama Technologies -->
-          <div class="relative mb-12 md:mb-16">
-            <div class="flex items-center mb-4">
-              <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2" style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
-              <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
-                <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2" style="background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.3);">Jan 2020 - Apr 2022</span>
-              </div>
-            </div>
-            <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
-              <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
-                <h4 class="text-xl font-bold text-white mb-2">Laravel Developer</h4>
-                <p class="text-orange-500 font-semibold mb-1">Shreedama Technologies</p>
-                <p class="text-gray-400 text-sm mb-3">Surat, India</p>
-                <ul class="text-gray-300 text-sm space-y-2 list-none">
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Joined as Laravel Fresher and worked on Jivado web applications from scratch building the E-commerce B2B platform like Indiamart</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Used Github pull, push and commit process for version controlling the code of the project</span></li>
-                  <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Worked on queue worker scheduling and cron jobs</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-      
 
-      <section id="contact" class="py-16 text-center">
-        <h3 class="text-3xl font-bold mb-3 text-white">Contact Me</h3>
-        <div class="accent-line"></div>
-        <p class="text-gray-300 mb-10 text-lg">If you have any inquiries or feedback, please don't hesitate to get in touch with us.</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6">
-          <a href="mailto:rohititaliaya@gmail.com" 
-             class="btn-orange">
-             Email Me
-          </a>
-          <a href="https://www.linkedin.com/in/rohit-italiya" target="_blank" 
-             class="btn-secondary">
-             LinkedIn
-          </a>
-         <a href="https://github.com/rohititaliaya" target="_blank" 
-             class="btn-secondary">
-             Github
-          </a> 
-          <!-- <a href="https://calendly.com/rohititaliaya/30min" target="_blank" 
+        <!-- Grid with card-based skills -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+          <!-- Laravel -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://laravel.com/img/favicon/apple-touch-icon.png" class="w-16 h-16 mb-3" alt="Laravel" />
+            <span class="text-sm font-medium text-gray-300">Laravel</span>
+          </div>
+
+          <!-- VueJS -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+              class="w-16 h-16 mb-3" alt="VueJS" />
+            <span class="text-sm font-medium text-gray-300">Vue.js</span>
+          </div>
+
+          <!-- Livewire -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://laravel-livewire.com/favicon.ico" class="w-16 h-16 mb-3" alt="Livewire" />
+            <span class="text-sm font-medium text-gray-300">Livewire</span>
+          </div>
+
+          <!-- Filament -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://filamentphp.com/favicon/favicon-32x32.png" class="w-16 h-16 mb-3" alt="Filament" />
+            <span class="text-sm font-medium text-gray-300">Filament</span>
+          </div>
+
+          <!-- MySQL -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+              class="w-16 h-16 mb-3" alt="MySQL" />
+            <span class="text-sm font-medium text-gray-300">MySQL</span>
+          </div>
+
+          <!-- Docker -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+              class="w-16 h-16 mb-3" alt="Docker" />
+            <span class="text-sm font-medium text-gray-300">Docker</span>
+          </div>
+
+          <!-- AWS -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/250px-Amazon_Web_Services_Logo.svg.png"
+              class="w-16 h-16 mb-3" alt="AWS" />
+            <span class="text-sm font-medium text-gray-300">AWS</span>
+          </div>
+
+          <!-- GitHub -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              class="w-16 h-16 mb-3" alt="GitHub" />
+            <span class="text-sm font-medium text-gray-300">GitHub</span>
+          </div>
+
+          <!-- GitLab -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
+              class="w-16 h-16 mb-3" alt="GitLab" />
+            <span class="text-sm font-medium text-gray-300">GitLab</span>
+          </div>
+
+          <!-- Jira -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" class="w-16 h-16 mb-3"
+              alt="Jira" />
+            <span class="text-sm font-medium text-gray-300">Jira</span>
+          </div>
+
+          <!-- Ubuntu -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <svg class="w-16 h-16 mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <circle cx="16" cy="16" r="16" fill="#dd4814" />
+              <path
+                d="M5.12 13.864a2.137 2.137 0 1 0 0 4.273 2.137 2.137 0 0 0 0-4.273zm19.256 9.71a2.25 2.25 0 1 0 4.123-2.135 2.25 2.25 0 0 0-4.123 2.135zM9.76 16a6.23 6.23 0 0 1 2.653-5.105L10.852 8.28a9.3 9.3 0 0 0-3.838 5.394C7.69 14.224 8.12 15.06 8.12 16s-.432 1.776-1.106 2.326c.577 2.237 1.968 4.146 3.838 5.395l1.562-2.616A6.23 6.23 0 0 1 9.761 16zM16 9.76a6.24 6.24 0 0 1 6.215 5.687l3.044-.045a9.25 9.25 0 0 0-2.757-6.019c-.812.307-1.75.26-2.56-.208a2.99 2.99 0 0 1-1.461-2.118C17.7 6.84 16.86 6.72 16 6.72c-1.477 0-2.873.347-4.113.96l1.484 2.66c.8-.372 1.69-.58 2.628-.58zm0 12.48c-.94 0-1.83-.21-2.628-.58l-1.484 2.66c1.24.614 2.636.96 4.113.96a9.28 9.28 0 0 0 2.479-.338c.14-.858.65-1.648 1.46-2.118s1.75-.514 2.56-.207a9.25 9.25 0 0 0 2.757-6.019l-3.045-.045A6.24 6.24 0 0 1 16 22.24z"
+                fill="#fff" />
+            </svg>
+            <span class="text-sm font-medium text-gray-300">Ubuntu</span>
+          </div>
+
+          <!-- Nginx -->
+          <div
+            class="flex flex-col items-center justify-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
+            style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <svg class="w-16 h-16 mb-3" xmlns="http://www.w3.org/2000/svg" height="2500" preserveAspectRatio="xMidYMid"
+              viewBox="0 -0.698 256 292.23699999999997" width="2500">
+              <path
+                d="M2.054 218.187c1.32 2.347 3.227 4.108 5.575 5.428l112.962 65.137c4.695 2.787 10.416 2.787 14.964 0l112.963-65.137c4.695-2.64 7.482-7.629 7.482-13.057V80.284c0-5.428-2.787-10.416-7.482-13.056L135.555 2.09c-4.694-2.788-10.416-2.788-14.964 0L7.63 67.228C2.787 69.868 0 74.856 0 80.284v130.42c0 2.642.587 5.136 2.054 7.483"
+                fill="#009639" />
+              <path
+                d="M91.837 195.154a14.463 14.463 0 0 1-14.524 14.524 14.463 14.463 0 0 1-14.523-14.524V95.542c0-7.776 6.895-14.084 16.43-14.084 6.896 0 14.965 2.787 19.806 8.802l4.4 5.282 60.737 72.618V95.835c0-8.069 6.455-14.524 14.524-14.524s14.523 6.455 14.523 14.524v99.613c0 7.775-6.895 14.083-16.43 14.083-6.896 0-14.965-2.787-19.806-8.802l-65.137-77.754z"
+                fill="#fff" />
+            </svg>
+            <span class="text-sm font-medium text-gray-300">Nginx</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-16">
+      <h3 class="text-3xl font-bold mb-3 text-center text-white">
+        Professional Experience
+      </h3>
+      <div class="accent-line"></div>
+      <p class="text-center text-gray-300 mb-12 text-lg">My journey in software development</p>
+
+      <div class="max-w-4xl mx-auto timeline-container">
+        <!-- Timeline line -->
+        <div class="timeline-line"></div>
+
+        <!-- Experience Items -->
+
+        <!-- Self Employed -->
+        <div class="relative mb-12 md:mb-16">
+          <div class="flex items-center mb-4">
+            <div
+              class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2"
+              style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
+            <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+              <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2"
+                style="background: rgba(255, 107, 53, 0.2); color: var(--orange); border: 1px solid var(--border-color);">Aug
+                2024 - Present</span>
+            </div>
+          </div>
+          <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
+            <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
+              <h4 class="text-xl font-bold text-white mb-2">Sr. Laravel Developer</h4>
+              <p class="text-orange-500 font-semibold mb-1">Self Employed</p>
+              <p class="text-gray-400 text-sm mb-3">Surat, India</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Whyphy Infotech -->
+        <div class="relative mb-12 md:mb-16">
+          <div class="flex items-center mb-4">
+            <div
+              class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2"
+              style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
+            <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+              <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2"
+                style="background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3);">Jan
+                2024 - Aug 2024</span>
+            </div>
+          </div>
+          <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
+            <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
+              <h4 class="text-xl font-bold text-white mb-2">Sr. Laravel Developer</h4>
+              <p class="text-orange-500 font-semibold mb-1">Whyphy Infotech</p>
+              <p class="text-gray-400 text-sm mb-3">Surat, India</p>
+              <ul class="text-gray-300 text-sm space-y-2 list-none">
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Made enhancements
+                    and updates to RESTful APIs within the existing SWOOPOS POS system</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Implemented new
+                    features, including "Combo Offer Apply" and "Upsell Group" functionalities</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Contributed to HPOS
+                    projects by modernizing the Web KDS (Kitchen Display System), transitioning it from the legacy
+                    version to a new version using Vue.js</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dhiera Solutions -->
+        <div class="relative mb-12 md:mb-16">
+          <div class="flex items-center mb-4">
+            <div
+              class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2"
+              style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
+            <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+              <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2"
+                style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3);">Jun
+                2022 - Dec 2024</span>
+            </div>
+          </div>
+          <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
+            <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
+              <h4 class="text-xl font-bold text-white mb-2">FullStack Laravel Developer</h4>
+              <p class="text-orange-500 font-semibold mb-1">Dhiera Solutions</p>
+              <p class="text-gray-400 text-sm mb-3">Surat, India</p>
+              <ul class="text-gray-300 text-sm space-y-2 list-none">
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Worked on SaaS
+                    Projects with making the UI/UX better flow for setting good user experience in the Laravel
+                    Application</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Handled the DevOps
+                    things in the Shopify plugin developed in Laravel backend and Frontend</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Specialized in
+                    Deploying, Version controlling the projects on AWS EC2 server and Manage CI/CD pipeline with
+                    continuous Deployment</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skyline Infosys -->
+        <div class="relative mb-12 md:mb-16">
+          <div class="flex items-center mb-4">
+            <div
+              class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2"
+              style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
+            <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+              <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2"
+                style="background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.3);">Apr
+                2022 - Jun 2022</span>
+            </div>
+          </div>
+          <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
+            <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
+              <h4 class="text-xl font-bold text-white mb-2">Laravel Developer</h4>
+              <p class="text-orange-500 font-semibold mb-1">Skyline Infosys</p>
+              <p class="text-gray-400 text-sm mb-3">Surat, India</p>
+              <ul class="text-gray-300 text-sm space-y-2 list-none">
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Followed Agile
+                    methodology working with Enterprise Client for Schooling Platform Steer.global</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Involved in daily
+                    task updates and meetings communication</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Used ticket System
+                    in Jira and Trello with the git tokens for tracking the task progress and updating and pulling the
+                    completed task in three stages of the project like dev, mirror and live</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>The ability to
+                    listen to issues carefully and identify sources of conflict, come up with alternative solutions and
+                    put a remedy into action</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shreedama Technologies -->
+        <div class="relative mb-12 md:mb-16">
+          <div class="flex items-center mb-4">
+            <div
+              class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full border-4 border-orange-500 bg-dark-bg transform -translate-x-1/2"
+              style="box-shadow: 0 0 20px rgba(255, 107, 53, 0.6);"></div>
+            <div class="ml-20 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
+              <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold mb-2"
+                style="background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.3);">Jan
+                2020 - Apr 2022</span>
+            </div>
+          </div>
+          <div class="ml-20 md:ml-auto md:w-1/2 md:pl-12">
+            <div class="glass-card p-6 hover:scale-105 transition-transform duration-300">
+              <h4 class="text-xl font-bold text-white mb-2">Laravel Developer</h4>
+              <p class="text-orange-500 font-semibold mb-1">Shreedama Technologies</p>
+              <p class="text-gray-400 text-sm mb-3">Surat, India</p>
+              <ul class="text-gray-300 text-sm space-y-2 list-none">
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Joined as Laravel
+                    Fresher and worked on Jivado web applications from scratch building the E-commerce B2B platform like
+                    Indiamart</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Used Github pull,
+                    push and commit process for version controlling the code of the project</span></li>
+                <li class="flex items-start gap-2"><span class="text-orange-500 mt-1">•</span><span>Worked on queue
+                    worker scheduling and cron jobs</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="contact" class="py-16 text-center">
+      <h3 class="text-3xl font-bold mb-3 text-white">Contact Me</h3>
+      <div class="accent-line"></div>
+      <p class="text-gray-300 mb-10 text-lg">If you have any inquiries or feedback, please don't hesitate to get in
+        touch with us.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="mailto:rohititaliaya@gmail.com" class="btn-orange">
+          Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/rohit-italiya" target="_blank" class="btn-secondary">
+          LinkedIn
+        </a>
+        <a href="https://github.com/rohititaliaya" target="_blank" class="btn-secondary">
+          Github
+        </a>
+        <!-- <a href="https://calendly.com/rohititaliaya/30min" target="_blank" 
              class="btn-orange">
              Book a Call
           </a> -->
-        </div>
-        
-      </section>      
-    </main>
+      </div>
 
-    <footer class="mt-20 border-t py-12 text-center text-sm text-gray-500" style="background: rgba(10, 10, 10, 0.8); border-color: rgba(255, 107, 53, 0.2);">
-      <p class="mt-8 text-gray-400">© 2025 Rohit Italiya. All rights reserved.</p>
-    </footer>
+    </section>
+  </main>
+
+  <footer class="mt-20 border-t py-12 text-center text-sm text-gray-500"
+    style="background: rgba(10, 10, 10, 0.8); border-color: rgba(255, 107, 53, 0.2);">
+    <p class="mt-8 text-gray-400">© 2025 Rohit Italiya. All rights reserved.</p>
+  </footer>
   <!-- <a target="_blank" href="https://forms.gle/o76ZthEUXYu8wvq76" class="fixed bottom-6 right-6 btn-orange shadow-2xl">Start Your Project</a> -->
 </body>
+
 </html>
